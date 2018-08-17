@@ -1,0 +1,27 @@
+package com.praveen.dao;
+
+import com.google.gson.Gson;
+import com.praveen.model.PersonalDetail;
+import com.praveen.model.PersonalDetailResponse;
+
+public class RegistartionDaoImplementation implements RegistrationDao {
+	
+	Gson gson = new Gson();
+
+	@Override
+	public boolean saveRegistartion(PersonalDetailResponse personalDetail1) {
+		
+		try {
+		PersonalDetail personalDetail  = new PersonalDetail();
+		personalDetail.setEmail(personalDetail1.getEmail());
+		personalDetail.setName(personalDetail1.getName());
+		personalDetail.setPassword(personalDetail1.getPassword());
+		DataDao.persist(personalDetail);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return false;
+	}
+
+}

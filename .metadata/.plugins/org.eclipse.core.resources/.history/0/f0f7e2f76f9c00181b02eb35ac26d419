@@ -1,0 +1,17 @@
+package com.praveen.business;
+
+
+import com.praveen.dao.RegistrationDao;
+import com.praveen.model.PersonalDetailResponse;
+
+public class BusinessLogic {
+	
+	public boolean savePersonalDetail(PersonalDetailResponse personalDetailResponse) {
+		boolean status = RegistrationDao.saveRegistartion(personalDetailResponse);
+		
+		
+		return true;
+		
+	}
+
+}

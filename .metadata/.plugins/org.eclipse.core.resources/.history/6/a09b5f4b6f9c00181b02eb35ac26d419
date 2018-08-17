@@ -1,0 +1,19 @@
+package com.praveen.dao;
+
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
+import org.mongodb.morphia.Datastore;
+
+import com.praveen.mongo.ConnectionFactory;
+
+public class DataDao {
+	public static void persist(Player player) throws NoSuchAlgorithmException, IOException { 
+		
+			player.setEmail(player.getEmail().toLowerCase()); 
+		
+		Datastore datastore = ConnectionFactory.getInstance().getDatastore(); 
+		datastore.save(player); 
+	} 
+
+}

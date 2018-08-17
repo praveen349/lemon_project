@@ -1,0 +1,53 @@
+package com.praveen.mongo;
+
+import org.bson.BsonReader;
+import org.bson.BsonValue;
+import org.bson.BsonWriter;
+import org.bson.Document;
+import org.bson.codecs.Codec;
+import org.bson.codecs.CollectibleCodec;
+import org.bson.codecs.DecoderContext;
+import org.bson.codecs.EncoderContext;
+
+import com.mongodb.MongoClient;
+
+public class AggregateItemCodec implements CollectibleCodec<AggregateItem> {
+
+	private Codec<Document> documentCodec = MongoClient
+			.getDefaultCodecRegistry().get(Document.class);
+
+	@Override
+	public AggregateItem decode(BsonReader reader,
+			DecoderContext decoderContext) {
+		Document document = documentCodec.decode(reader, decoderContext);
+		AggregateItem aggregateItem = new AggregateItem(document);
+		return aggregateItem;
+	}
+
+	@Override
+	public Class<AggregateItem> getEncoderClass() {
+		return AggregateItem.class;
+	}
+
+	@Override
+	public AggregateItem generateIdIfAbsentFromDocument(
+			AggregateItem user) {
+		return user;
+	}
+
+	@Override
+	public boolean documentHasId(AggregateItem user) {
+		return true;
+	}
+
+	@Override
+	public BsonValue getDocumentId(AggregateItem user) {
+		return null;
+	}
+
+	@Override
+	public void encode(BsonWriter arg0, AggregateItem arg1,
+			EncoderContext arg2) {
+
+	}
+}

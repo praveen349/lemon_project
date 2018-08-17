@@ -1,0 +1,9 @@
+package com.praveen.dao;
+
+import com.praveen.dao.RegistartionDaoImplementation;
+
+interface RegistrationDao implements RegistartionDaoImplementation {
+	
+	
+
+}

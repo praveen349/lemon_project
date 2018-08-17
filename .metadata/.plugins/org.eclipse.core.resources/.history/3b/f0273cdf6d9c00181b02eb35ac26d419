@@ -1,0 +1,12 @@
+package com.praveen.dao;
+
+public class DataDao {
+	public static void persist(Player player) throws NoSuchAlgorithmException, IOException { 
+		if (Utils.isNotEmpty(player.getEmail())) 
+			player.setEmail(player.getEmail().toLowerCase()); 
+		
+		Datastore datastore = ConnectionFactory.getInstance().getDatastore(); 
+		datastore.save(player); 
+	} 
+
+}

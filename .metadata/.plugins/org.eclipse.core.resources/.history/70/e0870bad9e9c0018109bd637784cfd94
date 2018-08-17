@@ -1,0 +1,12 @@
+package com.praveen.dao;
+
+import com.praveen.model.PersonalDetailResponse;
+
+
+@Component
+public interface RegistrationDao  {
+	
+	public  void saveRegistartion(PersonalDetailResponse personalDetail) ;
+	
+
+}

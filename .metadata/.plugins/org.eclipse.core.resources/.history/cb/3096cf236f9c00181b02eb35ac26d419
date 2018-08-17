@@ -1,0 +1,19 @@
+package com.praveen.dao;
+
+import com.google.gson.Gson;
+import com.praveen.model.PersonalDetail;
+import com.praveen.model.PersonalDetailResponse;
+
+public class RegistartionDaoImplementation implements RegistrationDao {
+	
+	Gson gson = new Gson();
+
+	@Override
+	public boolean saveRegistartion(PersonalDetailResponse personalDetail1) {
+		
+		PersonalDetail personalDetail  = gson.fromJson(personalDetail1, PersonalDetailResponse.class);
+		
+		return false;
+	}
+
+}

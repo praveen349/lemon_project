@@ -1,0 +1,1 @@
+INDEX VERSION 1.4+/home/user2/Documents/praveen_learning/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
