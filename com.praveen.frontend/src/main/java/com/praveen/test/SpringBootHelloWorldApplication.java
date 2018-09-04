@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
-@SuppressWarnings("deprecation")
 @SpringBootApplication(scanBasePackages={"com.praveen.*"})
 @ComponentScan({"com.praveen.*"})
 @EnableAutoConfiguration
